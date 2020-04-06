@@ -3,10 +3,10 @@
 namespace Refugis\ODM\ElasticaBundle\DependencyInjection;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use Refugis\ODM\Elastica\Annotation;
-use Refugis\ODM\Elastica\Metadata\Processor;
 use Kcs\Metadata\Loader\Processor\Annotation\Processor as MetadataProcessor;
 use Kcs\Metadata\Loader\Processor\ProcessorFactory;
+use Refugis\ODM\Elastica\Annotation;
+use Refugis\ODM\Elastica\Metadata\Processor;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -54,14 +54,14 @@ class ElasticaODMExtension extends Extension
             \method_exists(ProcessorFactory::class, 'registerProcessors') &&
             null !== $annotationReader->getClassAnnotation($processorReflectionClass, MetadataProcessor::class)
         ) {
-            $annotationFactory->addMethodCall('registerProcessors', [ \dirname($processorReflectionClass->getFileName()) ]);
+            $annotationFactory->addMethodCall('registerProcessors', [\dirname($processorReflectionClass->getFileName())]);
         } else {
-            $annotationFactory->addMethodCall('registerProcessor', [ Annotation\Document::class, Processor\DocumentProcessor::class ]);
-            $annotationFactory->addMethodCall('registerProcessor', [ Annotation\DocumentId::class, Processor\DocumentIdProcessor::class ]);
-            $annotationFactory->addMethodCall('registerProcessor', [ Annotation\IndexName::class, Processor\IndexNameProcessor::class ]);
-            $annotationFactory->addMethodCall('registerProcessor', [ Annotation\Index::class, Processor\IndexProcessor::class ]);
-            $annotationFactory->addMethodCall('registerProcessor', [ Annotation\TypeName::class, Processor\TypeNameProcessor::class ]);
-            $annotationFactory->addMethodCall('registerProcessor', [ Annotation\Field::class, Processor\FieldProcessor::class ]);
+            $annotationFactory->addMethodCall('registerProcessor', [Annotation\Document::class, Processor\DocumentProcessor::class]);
+            $annotationFactory->addMethodCall('registerProcessor', [Annotation\DocumentId::class, Processor\DocumentIdProcessor::class]);
+            $annotationFactory->addMethodCall('registerProcessor', [Annotation\IndexName::class, Processor\IndexNameProcessor::class]);
+            $annotationFactory->addMethodCall('registerProcessor', [Annotation\Index::class, Processor\IndexProcessor::class]);
+            $annotationFactory->addMethodCall('registerProcessor', [Annotation\TypeName::class, Processor\TypeNameProcessor::class]);
+            $annotationFactory->addMethodCall('registerProcessor', [Annotation\Field::class, Processor\FieldProcessor::class]);
             if (\class_exists(Annotation\Setting::class)) {
                 $annotationFactory->addMethodCall('registerProcessor', [Annotation\Setting::class, Processor\SettingProcessor::class]);
             }

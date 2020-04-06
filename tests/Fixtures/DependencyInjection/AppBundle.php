@@ -14,7 +14,7 @@ class AppBundle extends Bundle
      */
     public function build(ContainerBuilder $container): void
     {
-        $container->addCompilerPass(new class implements CompilerPassInterface {
+        $container->addCompilerPass(new class() implements CompilerPassInterface {
             public function process(ContainerBuilder $container): void
             {
                 $definition = $container->getDefinition('monolog.logger_prototype');

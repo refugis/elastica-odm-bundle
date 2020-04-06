@@ -57,11 +57,11 @@ class ElasticaDataCollector extends DataCollector
             }
 
             $queries[] = [
-                'path' => '/'.$request['path'].(!empty($request['query']) ? '?'.\http_build_query($request['query']) : ''),
+                'path' => '/'.$request['path'].(! empty($request['query']) ? '?'.\http_build_query($request['query']) : ''),
                 'method' => $request['method'],
                 'data' => $this->cloneVar($request['data']),
                 'response' => isset($log['context']['response']) ? $this->cloneVar($log['context']['response']) : null,
-                'executionMs' => (int) ($log['context']['response']['took'] ?? 0)
+                'executionMs' => (int) ($log['context']['response']['took'] ?? 0),
             ];
         }
 
