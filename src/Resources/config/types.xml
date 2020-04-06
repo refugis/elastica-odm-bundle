@@ -8,18 +8,18 @@
             <tag name="elastica.type" />
         </defaults>
         
-        <service id="fazland.odm.elastica.type.binary" class="Fazland\ODM\Elastica\Type\BinaryType" />
-        <service id="fazland.odm.elastica.type.boolean" class="Fazland\ODM\Elastica\Type\BooleanType" />
-        <service id="fazland.odm.elastica.type.completion" class="Fazland\ODM\Elastica\Type\CompletionType" />
-        <service id="fazland.odm.elastica.type.date_time_immutable" class="Fazland\ODM\Elastica\Type\DateTimeImmutableType" />
-        <service id="fazland.odm.elastica.type.date_time" class="Fazland\ODM\Elastica\Type\DateTimeType" />
-        <service id="fazland.odm.elastica.type.float" class="Fazland\ODM\Elastica\Type\FloatType" />
-        <service id="fazland.odm.elastica.type.geo_point" class="Fazland\ODM\Elastica\Type\GeoPointType" />
-        <service id="fazland.odm.elastica.type.geo_shape" class="Fazland\ODM\Elastica\Type\GeoShapeType" />
-        <service id="fazland.odm.elastica.type.integer" class="Fazland\ODM\Elastica\Type\IntegerType" />
-        <service id="fazland.odm.elastica.type.ip" class="Fazland\ODM\Elastica\Type\IpType" />
-        <service id="fazland.odm.elastica.type.percolator" class="Fazland\ODM\Elastica\Type\PercolatorType" />
-        <service id="fazland.odm.elastica.type.raw" class="Fazland\ODM\Elastica\Type\RawType" />
-        <service id="fazland.odm.elastica.type.string" class="Fazland\ODM\Elastica\Type\StringType" />
+        <service id="refugis.odm.elastica.type.binary" class="Refugis\ODM\Elastica\Type\BinaryType" />
+        <service id="refugis.odm.elastica.type.boolean" class="Refugis\ODM\Elastica\Type\BooleanType" />
+        <service id="refugis.odm.elastica.type.completion" class="Refugis\ODM\Elastica\Type\CompletionType" />
+        <service id="refugis.odm.elastica.type.date_time_immutable" class="Refugis\ODM\Elastica\Type\DateTimeImmutableType" />
+        <service id="refugis.odm.elastica.type.date_time" class="Refugis\ODM\Elastica\Type\DateTimeType" />
+        <service id="refugis.odm.elastica.type.float" class="Refugis\ODM\Elastica\Type\FloatType" />
+        <service id="refugis.odm.elastica.type.geo_point" class="Refugis\ODM\Elastica\Type\GeoPointType" />
+        <service id="refugis.odm.elastica.type.geo_shape" class="Refugis\ODM\Elastica\Type\GeoShapeType" />
+        <service id="refugis.odm.elastica.type.integer" class="Refugis\ODM\Elastica\Type\IntegerType" />
+        <service id="refugis.odm.elastica.type.ip" class="Refugis\ODM\Elastica\Type\IpType" />
+        <service id="refugis.odm.elastica.type.percolator" class="Refugis\ODM\Elastica\Type\PercolatorType" />
+        <service id="refugis.odm.elastica.type.raw" class="Refugis\ODM\Elastica\Type\RawType" />
+        <service id="refugis.odm.elastica.type.string" class="Refugis\ODM\Elastica\Type\StringType" />
     </services>
 </container>

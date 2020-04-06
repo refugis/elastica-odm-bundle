@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\DependencyInjection\Compiler;
+namespace Refugis\ODM\ElasticaBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\Cache\Adapter\ArrayAdapter;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -17,6 +17,6 @@ final class DebugPass implements CompilerPassInterface
             return;
         }
 
-        $container->register('fazland_elastica_odm.metadata_cache', ArrayAdapter::class);
+        $container->register('refugis_elastica_odm.metadata_cache', ArrayAdapter::class);
     }
 }

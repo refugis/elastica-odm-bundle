@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\DependencyInjection\Compiler;
+namespace Refugis\ODM\ElasticaBundle\DependencyInjection\Compiler;
 
-use Fazland\ODM\Elastica\Type\TypeManager;
+use Refugis\ODM\Elastica\Type\TypeManager;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;

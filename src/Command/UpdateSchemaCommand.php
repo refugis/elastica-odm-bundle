@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\Command;
+namespace Refugis\ODM\ElasticaBundle\Command;
 
-use Fazland\ODM\Elastica\Command\UpdateSchemaCommand as BaseCommand;
+use Refugis\ODM\Elastica\Command\UpdateSchemaCommand as BaseCommand;
 
 class UpdateSchemaCommand extends BaseCommand
 {
@@ -13,6 +13,6 @@ class UpdateSchemaCommand extends BaseCommand
     {
         parent::configure();
 
-        $this->setName('fazland:elastica:update-schema');
+        $this->setName('refugis:elastica:update-schema');
     }
 }

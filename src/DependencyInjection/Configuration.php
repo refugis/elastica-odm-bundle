@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\DependencyInjection;
+namespace Refugis\ODM\ElasticaBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\NodeParentInterface;

@@ -2,7 +2,7 @@
 
 namespace Tests\Fixtures\DependencyInjection\Controller;
 
-use Fazland\ODM\Elastica\DocumentManagerInterface;
+use Refugis\ODM\Elastica\DocumentManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Tests\Fixtures\Document\Foo;

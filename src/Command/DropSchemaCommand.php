@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\Command;
+namespace Refugis\ODM\ElasticaBundle\Command;
 
-use Fazland\ODM\Elastica\Command\DropSchemaCommand as BaseCommand;
+use Refugis\ODM\Elastica\Command\DropSchemaCommand as BaseCommand;
 
 class DropSchemaCommand extends BaseCommand
 {
@@ -13,6 +13,6 @@ class DropSchemaCommand extends BaseCommand
     {
         parent::configure();
 
-        $this->setName('fazland:elastica:drop-schema');
+        $this->setName('refugis:elastica:drop-schema');
     }
 }

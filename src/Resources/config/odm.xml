@@ -4,69 +4,69 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="fazland_elastica_odm.client" class="Elastica\Client">
+        <service id="refugis_elastica_odm.client" class="Elastica\Client">
             <argument type="collection">
-                <argument key="url">%fazland_elastica_odm.connection.url%</argument>
-                <argument key="connectTimeout">%fazland_elastica_odm.connection.connect_timeout%</argument>
-                <argument key="timeout">%fazland_elastica_odm.connection.timeout%</argument>
+                <argument key="url">%refugis_elastica_odm.connection.url%</argument>
+                <argument key="connectTimeout">%refugis_elastica_odm.connection.connect_timeout%</argument>
+                <argument key="timeout">%refugis_elastica_odm.connection.timeout%</argument>
             </argument>
             <argument /> <!-- callback -->
             <argument type="service" on-invalid="null" id="logger" />
             <tag name="monolog.logger" channel="elastica" />
         </service>
 
-        <service alias="fazland_elastica_odm.database" id="Fazland\ODM\ElasticaBundle\Database" />
-        <service id="fazland_elastica_odm.database" class="Fazland\ODM\ElasticaBundle\Database">
-            <argument type="service" id="fazland_elastica_odm.client" />
-            <argument>%fazland_elastica_odm.odm.index_suffix%</argument>
+        <service alias="refugis_elastica_odm.database" id="Refugis\ODM\ElasticaBundle\Database" />
+        <service id="refugis_elastica_odm.database" class="Refugis\ODM\ElasticaBundle\Database">
+            <argument type="service" id="refugis_elastica_odm.client" />
+            <argument>%refugis_elastica_odm.odm.index_suffix%</argument>
         </service>
 
-        <service id="fazland_elastica_odm.proxy_factory" class="ProxyManager\Factory\LazyLoadingGhostFactory" />
-        <service id="fazland_elastica_odm.metadata_cache" class="Psr\Cache\CacheItemPoolInterface">
+        <service id="refugis_elastica_odm.proxy_factory" class="ProxyManager\Factory\LazyLoadingGhostFactory" />
+        <service id="refugis_elastica_odm.metadata_cache" class="Psr\Cache\CacheItemPoolInterface">
             <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache" />
-            <argument>fazland_elastica_odm</argument>
+            <argument>refugis_elastica_odm</argument>
             <argument>0</argument>
             <argument /> <!-- version -->
-            <argument>%kernel.cache_dir%/fazland_elastica_metadata</argument>
+            <argument>%kernel.cache_dir%/refugis_elastica_metadata</argument>
         </service>
 
-        <service id="fazland_elastica_odm.annotation_processor_factory" class="Kcs\Metadata\Loader\Processor\ProcessorFactory" lazy="true" />
-        <service id="fazland_elastica_odm.metadata_loader" class="Fazland\ODM\Elastica\Metadata\Loader\AnnotationLoader" lazy="true">
-            <argument type="service" id="fazland_elastica_odm.annotation_processor_factory" />
+        <service id="refugis_elastica_odm.annotation_processor_factory" class="Kcs\Metadata\Loader\Processor\ProcessorFactory" lazy="true" />
+        <service id="refugis_elastica_odm.metadata_loader" class="Refugis\ODM\Elastica\Metadata\Loader\AnnotationLoader" lazy="true">
+            <argument type="service" id="refugis_elastica_odm.annotation_processor_factory" />
             <argument /> <!-- prefixDir -->
             <call method="setReader">
                 <argument type="service" id="annotations.reader" />
             </call>
         </service>
 
-        <service id="fazland_elastica_odm.metadata_factory" class="Fazland\ODM\Elastica\Metadata\MetadataFactory">
-            <argument type="service" id="fazland_elastica_odm.metadata_loader" />
-            <argument type="service" id="fazland_elastica_odm.metadata_cache" />
+        <service id="refugis_elastica_odm.metadata_factory" class="Refugis\ODM\Elastica\Metadata\MetadataFactory">
+            <argument type="service" id="refugis_elastica_odm.metadata_loader" />
+            <argument type="service" id="refugis_elastica_odm.metadata_cache" />
         </service>
 
-        <service id="Fazland\ODM\Elastica\Type\TypeManager" class="Fazland\ODM\Elastica\Type\TypeManager" />
+        <service id="Refugis\ODM\Elastica\Type\TypeManager" class="Refugis\ODM\Elastica\Type\TypeManager" />
 
-        <service id="fazland_elastica_odm.configuration" class="Fazland\ODM\Elastica\Configuration">
+        <service id="refugis_elastica_odm.configuration" class="Refugis\ODM\Elastica\Configuration">
             <call method="setProxyFactory">
-                <argument type="service" id="fazland_elastica_odm.proxy_factory" />
+                <argument type="service" id="refugis_elastica_odm.proxy_factory" />
             </call>
             <call method="setMetadataFactory">
-                <argument type="service" id="fazland_elastica_odm.metadata_factory" />
+                <argument type="service" id="refugis_elastica_odm.metadata_factory" />
             </call>
             <call method="setResultCache">
                 <argument type="service" id="cache.app" />
             </call>
             <call method="setTypeManager">
-                <argument type="service" id="Fazland\ODM\Elastica\Type\TypeManager" />
+                <argument type="service" id="Refugis\ODM\Elastica\Type\TypeManager" />
             </call>
         </service>
 
-        <service alias="fazland_elastica_odm.document_manager" id="Fazland\ODM\Elastica\DocumentManager" />
-        <service id="fazland_elastica_odm.document_manager" class="Fazland\ODM\Elastica\DocumentManager" public="true">
-            <argument type="service" id="Fazland\ODM\ElasticaBundle\Database" />
-            <argument type="service" id="fazland_elastica_odm.configuration" />
+        <service alias="refugis_elastica_odm.document_manager" id="Refugis\ODM\Elastica\DocumentManager" />
+        <service id="refugis_elastica_odm.document_manager" class="Refugis\ODM\Elastica\DocumentManager" public="true">
+            <argument type="service" id="Refugis\ODM\ElasticaBundle\Database" />
+            <argument type="service" id="refugis_elastica_odm.configuration" />
         </service>
 
-        <service id="Fazland\ODM\Elastica\DocumentManagerInterface" alias="fazland_elastica_odm.document_manager" />
+        <service id="Refugis\ODM\Elastica\DocumentManagerInterface" alias="refugis_elastica_odm.document_manager" />
     </services>
 </container>

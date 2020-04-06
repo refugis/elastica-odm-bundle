@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\DataCollector;
+namespace Refugis\ODM\ElasticaBundle\DataCollector;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

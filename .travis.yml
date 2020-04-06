@@ -26,7 +26,7 @@ before_install:
     - curl -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.3.0.deb && sudo dpkg -i --force-confnew elasticsearch-6.3.0.deb && sudo service elasticsearch restart
     - composer self-update
     - if [ "$SYMFONY_VERSION" != "" ]; then composer require --dev --no-update symfony/messenger=$SYMFONY_VERSION; fi
-    - composer require fazland/elastica-odm dev-master --no-update
+    - composer require refugis/elastica-odm dev-master --no-update
 
 before_script:
     - composer install --no-progress --no-suggest

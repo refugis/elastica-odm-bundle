@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle;
+namespace Refugis\ODM\ElasticaBundle;
 
 use Elastica\Client;
 use Elastica\SearchableInterface;
-use Fazland\ODM\Elastica\Collection\Database as BaseDatabase;
-use Fazland\ODM\Elastica\Metadata\DocumentMetadata;
+use Refugis\ODM\Elastica\Collection\Database as BaseDatabase;
+use Refugis\ODM\Elastica\Metadata\DocumentMetadata;
 
 class Database extends BaseDatabase
 {

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<xsd:schema xmlns="http://fazland.com/schema/dic/elastica_odm"
+<xsd:schema xmlns="http://refugis.com/schema/dic/elastica_odm"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://fazland.com/schema/dic/elastica_odm"
+            targetNamespace="http://refugis.com/schema/dic/elastica_odm"
             elementFormDefault="qualified">
 
     <xsd:element name="config">

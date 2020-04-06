@@ -4,13 +4,13 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="Fazland\ODM\ElasticaBundle\Command\DropSchemaCommand" class="Fazland\ODM\ElasticaBundle\Command\DropSchemaCommand">
-            <argument type="service" id="fazland_elastica_odm.document_manager" />
+        <service id="Refugis\ODM\ElasticaBundle\Command\DropSchemaCommand" class="Refugis\ODM\ElasticaBundle\Command\DropSchemaCommand">
+            <argument type="service" id="refugis_elastica_odm.document_manager" />
             <tag name="console.command" />
         </service>
 
-        <service id="Fazland\ODM\ElasticaBundle\Command\UpdateSchemaCommand" class="Fazland\ODM\ElasticaBundle\Command\UpdateSchemaCommand">
-            <argument type="service" id="fazland_elastica_odm.document_manager" />
+        <service id="Refugis\ODM\ElasticaBundle\Command\UpdateSchemaCommand" class="Refugis\ODM\ElasticaBundle\Command\UpdateSchemaCommand">
+            <argument type="service" id="refugis_elastica_odm.document_manager" />
             <tag name="console.command" />
         </service>
     </services>

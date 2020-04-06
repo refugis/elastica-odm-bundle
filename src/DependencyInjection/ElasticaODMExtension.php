@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\DependencyInjection;
+namespace Refugis\ODM\ElasticaBundle\DependencyInjection;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use Fazland\ODM\Elastica\Annotation;
-use Fazland\ODM\Elastica\Metadata\Processor;
+use Refugis\ODM\Elastica\Annotation;
+use Refugis\ODM\Elastica\Metadata\Processor;
 use Kcs\Metadata\Loader\Processor\Annotation\Processor as MetadataProcessor;
 use Kcs\Metadata\Loader\Processor\ProcessorFactory;
 use Symfony\Component\Config\FileLocator;
@@ -31,22 +31,22 @@ class ElasticaODMExtension extends Extension
             $loader->load('console.xml');
         }
 
-        $definition = $container->getDefinition('fazland_elastica_odm.metadata_loader');
+        $definition = $container->getDefinition('refugis_elastica_odm.metadata_loader');
         $definition->replaceArgument(1, $config['odm']['mappings']['prefix_dir']);
 
-        $container->setParameter('fazland_elastica_odm.connection.url', $container->resolveEnvPlaceholders($config['connection']['url']));
-        $container->setParameter('fazland_elastica_odm.connection.connect_timeout', $config['connection']['connect_timeout']);
-        $container->setParameter('fazland_elastica_odm.connection.timeout', $config['connection']['timeout']);
+        $container->setParameter('refugis_elastica_odm.connection.url', $container->resolveEnvPlaceholders($config['connection']['url']));
+        $container->setParameter('refugis_elastica_odm.connection.connect_timeout', $config['connection']['connect_timeout']);
+        $container->setParameter('refugis_elastica_odm.connection.timeout', $config['connection']['timeout']);
 
-        $container->setParameter('fazland_elastica_odm.odm.index_suffix', $config['odm']['index_suffix']);
+        $container->setParameter('refugis_elastica_odm.odm.index_suffix', $config['odm']['index_suffix']);
 
         $container
-            ->getDefinition('fazland_elastica_odm.metadata_cache')
+            ->getDefinition('refugis_elastica_odm.metadata_cache')
             ->replaceArgument(2, new Parameter('container.build_id'))
         ;
 
         $annotationReader = \class_exists(AnnotationReader::class) ? new AnnotationReader() : null;
-        $annotationFactory = $container->findDefinition('fazland_elastica_odm.annotation_processor_factory');
+        $annotationFactory = $container->findDefinition('refugis_elastica_odm.annotation_processor_factory');
         $processorReflectionClass = new \ReflectionClass(Processor\IndexProcessor::class);
         if (
             null !== $annotationReader &&

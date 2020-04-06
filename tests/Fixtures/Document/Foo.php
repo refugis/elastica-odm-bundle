@@ -2,9 +2,9 @@
 
 namespace Tests\Fixtures\Document;
 
-use Fazland\ODM\Elastica\Annotation\Document;
-use Fazland\ODM\Elastica\Annotation\DocumentId;
-use Fazland\ODM\Elastica\Annotation\Field;
+use Refugis\ODM\Elastica\Annotation\Document;
+use Refugis\ODM\Elastica\Annotation\DocumentId;
+use Refugis\ODM\Elastica\Annotation\Field;
 
 /**
  * @Document("foo_index/foo_type")

@@ -2,7 +2,7 @@
 
 namespace Tests\Fixtures\DependencyInjection;
 
-use Fazland\ODM\ElasticaBundle\ElasticaODMBundle;
+use Refugis\ODM\ElasticaBundle\ElasticaODMBundle;
 use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\MonologBundle\MonologBundle;
 use Symfony\Bundle\TwigBundle\TwigBundle;

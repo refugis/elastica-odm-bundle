@@ -1,20 +1,24 @@
 {
-    "name": "fazland/elastica-odm-bundle",
+    "name": "refugis/elastica-odm-bundle",
     "description": "Elastica ODM Bundle",
     "license": "MIT",
     "authors": [
         {
             "name": "Massimiliano Braglia",
-            "email": "massimiliano.braglia@fazland.com"
+            "email": "massimiliano.braglia@gmail.com"
         },
         {
-            "name": "Alessandro Chitolina",
-            "email": "alessandro.chitolina@fazland.com"
+            "name": "Alessadro Chitolina",
+            "email": "alekitto@gmail.com"
+        },
+        {
+            "name": "Fazland DevTeam",
+            "email": "devs@fazland.com"
         }
     ],
     "require": {
         "php": "^7.3",
-        "fazland/elastica-odm": "^1.0",
+        "refugis/elastica-odm": "^1.0",
         "symfony/config": "^4.0|^5.0",
         "symfony/dependency-injection": "^4.0|^5.0",
         "symfony/framework-bundle": "^4.0|^5.0"
@@ -31,7 +35,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Fazland\\ODM\\ElasticaBundle\\": "src/"
+            "Refugis\\ODM\\ElasticaBundle\\": "src/"
         }
     },
     "autoload-dev": {

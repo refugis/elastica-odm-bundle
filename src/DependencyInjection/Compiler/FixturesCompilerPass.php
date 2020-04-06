@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Fazland\ODM\ElasticaBundle\DependencyInjection\Compiler;
+namespace Refugis\ODM\ElasticaBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
